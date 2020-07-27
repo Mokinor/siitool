@@ -1,0 +1,42 @@
+
+v1.3:
+- Fix bug with segfault on large ESI files
+  (see also https://github.com/synapticon/siitool/issues/9)
+- Fix display of all PDO mappings
+  (see also https://github.com/synapticon/siitool/issues/8)
+
+v1.2:
+- Dc section is no longer part of the gnerated SII binary
+- Add commandline parameter `-m` to add  PDO mapping to the generated SII
+  binary.
+- Fix check for the checksum of the first bytes
+- Fix group string
+- Fix preample sync impulse value
+
+Known Bugs:
+- Large ESI files let the application crash
+- Multiple PDO mappings are not printed correctly
+
+v1.1:
+- Fix for odd sized string section
+- Fix padding for PDO entry (Ittner)
+- Fix matching of FMMU nodes
+- FIx parsing of eeprom config
+- Applied several pull requests from @sittner on github (thanks)
+- Changed versioning to git describe
+- Reduce build dependencies
+- Fix various XML related bugs (empty tags, BOM)
+- Fix recognition of mailbox attributes
+
+v1.0:
+- Rework of SII content printing
+- Bugfixes
+
+v0.3:
+- added optional section offset printout
+
+v0.2:
+- added versioning
+- print of string section
+- use of strings in string section (basic)
+

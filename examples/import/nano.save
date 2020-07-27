@@ -1,0 +1,54 @@
+First print preamble and config Preamble: PDI Control: ................ 0x0f80 PDI Config: ................. 
+0xcc00 Sync Impulse Length: ........ 50000 ns (raw: 0x1388) PDI Config 2: ............... 0x00ff Configured 
+Station Alias: ... 0x0000 Checksum of Preamble: ....... 0x0057 (ok) Identity:
+  Vendor ID: ................ 0x000004d8 Product ID: ............... 0x0000000d Revision ID: .............. 
+  0x00000001 Serial Number: ............ 0x00000000
+Default mailbox settings: Bootstrap Mailbox: Received Mailbox Offset: .. 0x0000 Received Mailbox Size: .... 0 
+  Send Mailbox Offset: ...... 0x0000 Send Mailbox Size: ........ 0 Mailbox Settings: Received Mailbox Offset: .. 
+  0x0000 Received Mailbox Size: .... 0 Send Mailbox Offset: ...... 0x0000 Send Mailbox Size: ........ 0
+Supported Mailboxes: CoE ....................... False EoE ....................... False FoE 
+  ....................... False SoE ....................... False VoE ....................... False
+EEPROM size: ................ 2048 bytes Version: .................... 1 Print Categorie: Strings (0xa) Size: 66 
+  Bytes with 6 strings ID Size (Bytes) String
+    1: ( 32) ......... 'LAN9252-C2000 Sample Application' 2: ( 8) ......... 'Synchron' 3: ( 2) ......... 'DC' 4: 
+    ( 6) ......... 'Byte 0' 5: ( 5) ......... 'Input' 6: ( 6) ......... 'Output'
+Print Categorie: General (0x1e) Size: 32 Bytes Vendor Specific (Index of String) Name Index: 1: ............. 
+    LAN9252-C2000 Sample Application Group Index: 1: ............. LAN9252-C2000 Sample Application Image Index: 
+    0: ............. not set Order Index: 1: ............. LAN9252-C2000 Sample Application
+  CoE Details: Enable SDO: .................. no Enable SDO Info: ............. no Enable PDO Assign: 
+    ........... no Enable PDO Configuration: .... no Enable Upload at Startup: .... no Enable SDO complete 
+    access: .. no
+  FoE Details: ................... not enabled EoE Details: ................... not enabled Flag SafeOp: 
+  ................... not enabled Flag notLRW: ................... not enabled Flag MBox Data Link Layer ...... 
+  not enabled Flag Ident AL Status ........... not enabled Flag Ident Physical Memory ..... not enabled 
+  CurrentOnEBus: ................. 0 mA Physical Ports:
+     Port 0: ..................... MII Port 1: ..................... MII Port 2: ..................... not used 
+     Port 3: ..................... not used
+  Physical Memory Address ........ 0x0000 Print Categorie: FMMU (0x28) Size: 2 Bytes Number of FMMUs: 2 FMMU0: 
+    used for Outputs FMMU1: used for Inputs
+Print Categorie: SyncManager (0x29) Size: 16 Bytes Number of SyncManager: 2 SyncManager SM0 Physical 
+    Startaddress: ... 0x1000 Length: .................. 0 Control Register: ........ 0x44 Status Register: 
+    ......... 0x00 Enable byte: ............. 0x09 SM Type: ................. Process Data Out
+  SyncManager SM1 Physical Startaddress: ... 0x1200 Length: .................. 0 Control Register: ........ 0x00 
+    Status Register: ......... 0x00 Enable byte: ............. 0x01 SM Type: ................. Process Data In
+Print Categorie: TX PDO (0x32) Size: 16 Bytes TxPDO: PDO Index: .................. 0x1600 Entries: 
+    .................... 1 SyncM: ...................... 1 Synchronization: ............ 0x00 Name Index: 
+    ................. 4 Flags for future use: ....... 0x0010
+      Entry 0: Entry Index: .............. 0x3001 Subindex: ................. 0x01 String Index: ............. 5 
+      (Input) Data Type: ................ 0x0a (Index in CoE Object Dictionary) Bitlength: ................ 8 
+      Flags (for future use): ... 0x0000
+Print Categorie: RX PDO (0x33) Size: 16 Bytes RxPDO: PDO Index: .................. 0x1a00 Entries: 
+    .................... 1 SyncM: ...................... 0 Synchronization: ............ 0x00 Name Index: 
+    ................. 4 Flags for future use: ....... 0x0010
+      Entry 0: Entry Index: .............. 0x3101 Subindex: ................. 0x01 String Index: ............. 6 
+      (Output) Data Type: ................ 0x0a (Index in CoE Object Dictionary) Bitlength: ................ 8 
+      Flags (for future use): ... 0x0000
+Print Categorie: DC CLOCK (0x3c) Size: 48 Bytes Cyclic Operation Enable: ...... no SYNC0 activate: 
+  ............... no SYNC1 activate: ............... no SYNC Pulse: ................... 0 (ns?) Interrupt 0 
+  Status: ........... not active Interrupt 1 Status: ........... not active Cyclic Operation Startime: .... 0 ns 
+  SYNC0 Cycle Time: ............. 0 (ns?) SYNC0 Cycle Time: ............. 65536 (ns?) Latch Description
+    Latch 0 PosEdge: ............ continous Latch 0 NegEdge: ............ single Latch 1 PosEdge: ............ 
+    continous Latch 1 NegEdge: ............ continous Latch 0 PosEvnt: ............ no Event Latch 0 NegEvnt: 
+    ............ no Event Latch 1 PosEvnt: ............ no Event Latch 1 NegEvnt: ............ no Event 
+    Latch0PosEdgeValue: ......... 0x00000000 Latch0NegEdgeValue: ......... 0x03000000 Latch1PosEdgeValue: 
+    ......... 0x00030001 Latch1NegEdgeValue: ......... 0x00000000
