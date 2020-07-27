@@ -211,7 +211,10 @@ static int parse_xml_input(const unsigned char *buffer, size_t length, const cha
 		sii_print(sii);
 	} else {
 		sii_generate(sii, g_add_pdo_mapping);
+<<<<<<< HEAD
 		printf("add mapping");
+=======
+>>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		int ret = sii_write_bin(sii, output);
 		if (ret < 0) {
 			fprintf(stderr, "Error, couldn't write output file\n");
@@ -295,10 +298,14 @@ int main(int argc, char *argv[])
 	}
 
 	if (filename == NULL)
+<<<<<<< HEAD
 	{
 		printf("Filename : \n");
 		eeprom = read_input(stdin, eeprom, &eeprom_length);
 	}
+=======
+		eeprom = read_input(stdin, eeprom, &eeprom_length);
+>>>>>>> dfb127e53a1015a2002e856938ca077955086750
 	else {
 		f = fopen(filename, "r");
 		if (f == NULL) {
@@ -307,9 +314,15 @@ int main(int argc, char *argv[])
 			goto finish;
 		}
 
+<<<<<<< HEAD
 
 		printf("Start reading contents of file %s\n", filename);
 
+=======
+#if DEBUG == 1
+		printf("Start reading contents of file %s\n", filename);
+#endif
+>>>>>>> dfb127e53a1015a2002e856938ca077955086750
 
 		eeprom = read_input(f, eeprom,  &eeprom_length);
 		fclose(f);
@@ -324,9 +337,15 @@ int main(int argc, char *argv[])
 	unsigned char *xml_start = eeprom;
 	switch (filetype) {
 	case ESIXML:
+<<<<<<< HEAD
 
 		printf("Processing ESI/XML file\n");
 
+=======
+#if DEBUG == 1
+		printf("Processing ESI/XML file\n");
+#endif
+>>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		/* Start XML processing at the first '<' character to avoid strange behavior when parsing. */
 		while (*xml_start != '<')
 			xml_start++;
@@ -335,9 +354,15 @@ int main(int argc, char *argv[])
 		break;
 
 	case SIIEEPROM:
+<<<<<<< HEAD
 
 		printf("Processing SII/EEPROM file\n");
 
+=======
+#if DEBUG == 1
+		printf("Processing SII/EEPROM file\n");
+#endif
+>>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		ret = parse_sii_input(eeprom, output);
 		break;
 

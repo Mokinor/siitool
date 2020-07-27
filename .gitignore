@@ -1,0 +1,13 @@
+siitool
+siitool.1
+*.o
+*.log
+*~
+*.sw*
+tmp/
+test/
+*.tar.gz
+*.plist
+*.gch
+.cscopedb/
+cscope.out
