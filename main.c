@@ -211,10 +211,7 @@ static int parse_xml_input(const unsigned char *buffer, size_t length, const cha
 		sii_print(sii);
 	} else {
 		sii_generate(sii, g_add_pdo_mapping);
-<<<<<<< HEAD
 		printf("add mapping");
-=======
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		int ret = sii_write_bin(sii, output);
 		if (ret < 0) {
 			fprintf(stderr, "Error, couldn't write output file\n");
@@ -298,14 +295,10 @@ int main(int argc, char *argv[])
 	}
 
 	if (filename == NULL)
-<<<<<<< HEAD
 	{
 		printf("Filename : \n");
 		eeprom = read_input(stdin, eeprom, &eeprom_length);
 	}
-=======
-		eeprom = read_input(stdin, eeprom, &eeprom_length);
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 	else {
 		f = fopen(filename, "r");
 		if (f == NULL) {
@@ -314,15 +307,9 @@ int main(int argc, char *argv[])
 			goto finish;
 		}
 
-<<<<<<< HEAD
 
 		printf("Start reading contents of file %s\n", filename);
 
-=======
-#if DEBUG == 1
-		printf("Start reading contents of file %s\n", filename);
-#endif
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 
 		eeprom = read_input(f, eeprom,  &eeprom_length);
 		fclose(f);
