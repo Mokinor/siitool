@@ -14,15 +14,9 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-<<<<<<< HEAD
-#define SKIP_DC       0x0//0x0001
-#define SKIP_TXPDO    0x0//0x0010
-#define SKIP_RXPDO    0x0//0x0020
-=======
 #define SKIP_DC       0x0001
 #define SKIP_TXPDO    0x0010
 #define SKIP_RXPDO    0x0020
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 
 /* category functions */
 static struct _sii_cat *cat_new(uint16_t type, uint16_t size);
@@ -558,10 +552,7 @@ static struct _sii_pdo *parse_pdo_section(const unsigned char *buffer, size_t se
 		break;
 	case TxPDO:
 		pdo->type = SII_TX_PDO;
-<<<<<<< HEAD
 		printf("Found PDO in sii\n");
-=======
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		break;
 	default:
 		pdo->type = SII_UNDEF_PDO;
@@ -1505,12 +1496,8 @@ static uint16_t sii_cat_write_syncm(struct _sii_cat *cat, unsigned char *buf)
 }
 
 static uint16_t sii_cat_write_pdo(struct _sii_cat *cat, unsigned char *buf)
-<<<<<<< HEAD
 {	
 	printf("Write PDO\n");
-=======
-{
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 	unsigned char *b = buf;
 	struct _sii_pdo *pdo = cat->data;
 
@@ -1724,7 +1711,6 @@ static size_t sii_cat_write(struct _sii *sii, uint16_t skipmask)
 			if (skipmask & (SKIP_TXPDO | SKIP_RXPDO)) {
 				buf -= 4;
 				cat = (cat->next != NULL) ? cat->next : NULL;
-<<<<<<< HEAD
 				printf("skipped\n");
 				continue;
 			} else {
@@ -1733,22 +1719,13 @@ static size_t sii_cat_write(struct _sii *sii, uint16_t skipmask)
 			}
 			printf("not skipped written\n");
 			catsize = sii_cat_write_pdo(cat, buf);
-=======
-				continue;
-			} else {
-				catsize = sii_cat_write_pdo(cat, buf);
-			}
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 			break;
 
 		case SII_CAT_DCLOCK:
 			if (skipmask & SKIP_DC) {
 				buf -= 4;
 				cat = (cat->next != NULL) ? cat->next : NULL;
-<<<<<<< HEAD
 				printf("skipped clock\n");
-=======
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 				continue;
 			} else {
 				catsize = sii_cat_write_dc(cat, buf);

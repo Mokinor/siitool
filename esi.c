@@ -94,11 +94,6 @@ static char *type2str(int type)
 	return "empty";
 }
 
-<<<<<<< HEAD
-
-=======
-#if DEBUG == 1
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 static void print_node(xmlNode *node)
 {
 	if ((node->type == XML_TEXT_NODE) && (0x0a == *(node->content)))
@@ -107,11 +102,6 @@ static void print_node(xmlNode *node)
 	printf("%d: type: %s name = %s, content = '%s'\n",
 		node->line, type2str(node->type), node->name, node->content);
 }
-<<<<<<< HEAD
-
-=======
-#endif
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 
 static void print_all_nodes(xmlNode *root)
 {
@@ -140,11 +130,6 @@ static void print_all_nodes(xmlNode *root)
 	}
 }
 
-<<<<<<< HEAD
-
-=======
-#if DEBUG == 1
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 static void parse_example(xmlNode *root)
 {
 	for (xmlNode *current = root; current; current = current->next) {
@@ -162,11 +147,6 @@ static void parse_example(xmlNode *root)
 		parse_example(current->children);
 	}
 }
-<<<<<<< HEAD
-
-=======
-#endif
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 
 static int parse_boolean(xmlChar *boolean)
 {
@@ -1027,10 +1007,7 @@ int esi_parse(EsiData *esi)
 #endif
 		} else if (xmlStrncmp(current->name, Char2xmlChar("RxPdo"), xmlStrlen(current->name)) == 0) {
 			parse_pdo(current, esi->sii);
-<<<<<<< HEAD
 			printf("Found Pdo\n");
-=======
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		} else if (xmlStrncmp(current->name, Char2xmlChar("TxPdo"), xmlStrlen(current->name)) == 0) {
 			parse_pdo(current, esi->sii);
 		}
