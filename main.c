@@ -337,15 +337,9 @@ int main(int argc, char *argv[])
 	unsigned char *xml_start = eeprom;
 	switch (filetype) {
 	case ESIXML:
-<<<<<<< HEAD
-
-		printf("Processing ESI/XML file\n");
-
-=======
 #if DEBUG == 1
 		printf("Processing ESI/XML file\n");
 #endif
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		/* Start XML processing at the first '<' character to avoid strange behavior when parsing. */
 		while (*xml_start != '<')
 			xml_start++;
@@ -354,15 +348,9 @@ int main(int argc, char *argv[])
 		break;
 
 	case SIIEEPROM:
-<<<<<<< HEAD
 
 		printf("Processing SII/EEPROM file\n");
 
-=======
-#if DEBUG == 1
-		printf("Processing SII/EEPROM file\n");
-#endif
->>>>>>> dfb127e53a1015a2002e856938ca077955086750
 		ret = parse_sii_input(eeprom, output);
 		break;
 
