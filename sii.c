@@ -1708,28 +1708,29 @@ static size_t sii_cat_write(struct _sii *sii, uint16_t skipmask)
 
 		case SII_CAT_TXPDO:
 		case SII_CAT_RXPDO:
-			if (skipmask & (SKIP_TXPDO | SKIP_RXPDO)) {
-				buf -= 4;
-				cat = (cat->next != NULL) ? cat->next : NULL;
-				printf("skipped\n");
-				continue;
-			} else {
+			// if (skipmask & (SKIP_TXPDO | SKIP_RXPDO)) {
+			// 	buf -= 4;
+			// 	cat = (cat->next != NULL) ? cat->next : NULL;
+			// 	printf("skipped\n");
+			// 	continue;
+			// } else {
 				
-				catsize = sii_cat_write_pdo(cat, buf);
-			}
+			// 	catsize = sii_cat_write_pdo(cat, buf);
+			// }
 			printf("not skipped written\n");
 			catsize = sii_cat_write_pdo(cat, buf);
 			break;
 
 		case SII_CAT_DCLOCK:
-			if (skipmask & SKIP_DC) {
-				buf -= 4;
-				cat = (cat->next != NULL) ? cat->next : NULL;
-				printf("skipped clock\n");
-				continue;
-			} else {
-				catsize = sii_cat_write_dc(cat, buf);
-			}
+			// if (skipmask & SKIP_DC) {
+			// 	buf -= 4;
+			// 	cat = (cat->next != NULL) ? cat->next : NULL;
+			// 	printf("skipped clock\n");
+			// 	continue;
+			// } else {
+			// 	catsize = sii_cat_write_dc(cat, buf);
+			// }
+			catsize = sii_cat_write_dc(cat, buf);
 			break;
 
 		default:
@@ -2294,18 +2295,18 @@ struct _sii_dclock *dclock_get_default(void)
 {
 	static struct _sii_dclock dcproto = {
 		.reserved1 = 0, /* shall be zero */
-		.cyclic_op_enabled = 0,
-		.sync0_active = 0,
-		.sync1_active = 0,
+		.cyclic_op_enabled = 1,
+		.sync0_active = 1,
+		.sync1_active = 1,
 		.reserved2 = 0,
-		.sync_pulse = 0,
-		.int0_status = 0,
+		.sync_pulse = 100,
+		.int0_status = 1,
 		.reserved4 = 0,
-		.int1_status = 0,
+		.int1_status = 1,
 		.reserved5 = 0,
 		.cyclic_op_starttime = 0,
-		.sync0_cycle_time = 0,
-		.sync1_cycle_time = 0x10000,
+		.sync0_cycle_time = 0x100,
+		.sync1_cycle_time = 0x150,
 		.latch0_pos_edge = 1,
 		.latch0_neg_edge = 0,
 		.reserved6 = 0,

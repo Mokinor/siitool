@@ -5,7 +5,7 @@ SCHEME="EtherCATInfo.xsd"
 COMMAND="xmllint --noout --schema ${SCHEME}"
 
 
-for f in Somanet_CiA402-multi.xml Somanet_CiA402-single.xml Somanet_CtrlProto.xml 
+for f in LAN9252SPI.xml slave.xml LAN9252SPI_no_mbx.xml 
 do
 	#echo "Checking $f"
 	eval ${COMMAND} ${f}
