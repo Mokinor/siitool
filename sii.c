@@ -688,6 +688,7 @@ static void print_offsets(const unsigned char *start, const unsigned char *curre
 static int parse_content(struct _sii *sii, const unsigned char *eeprom, size_t maxsize)
 {
 	enum eSection section = SII_PREAMBLE;
+	const size_t max_bytes_size = 2 * maxsize;
 	size_t secsize = 0;
 	const unsigned char *buffer = eeprom;
 
@@ -701,11 +702,8 @@ static int parse_content(struct _sii *sii, const unsigned char *eeprom, size_t m
 	struct _sii_pdo *rxpdo;
 	struct _sii_dclock *distributedclock;
 
-	while (1) {
+	while (max_bytes_size > (size_t)(buffer - eeprom)) {
 		switch (section) {
-		case SII_CAT_NOP:
-			break;
-
 		case SII_PREAMBLE:
 			sii->preamble = parse_preamble(buffer, 16);
 			buffer = eeprom+16;
@@ -828,6 +826,7 @@ static int parse_content(struct _sii *sii, const unsigned char *eeprom, size_t m
 			goto finish;
 			break;
 
+		case SII_CAT_NOP:
 		default:
 			fprintf(stderr, "[WARNING] Category 0x%.4x unknown, skipping ....\n", section);
 			buffer+=secsize;
@@ -837,8 +836,9 @@ static int parse_content(struct _sii *sii, const unsigned char *eeprom, size_t m
 		}
 	}
 
-	if ((size_t)(buffer-eeprom) > maxsize)
-		printf("Warning, read more bytes than are available\n");
+	fprintf(stderr, "Error, SII probably malformed. No 0xffff at the end found\n");
+	return 1;
+
 finish:
 
 	return 0;
