@@ -523,7 +523,6 @@ static struct _sii_general *parse_general(SiiInfo *sii, xmlNode *root)
 			if (xmlStrcmp(attr->name, Char2xmlChar("??sdoComplete")) == 0)
 				general->coe_enable_sdo_complete = parse_boolean(attr->children->content);
 
-			//attr = attr->next;
 		}
 	}
 
